@@ -1,1 +1,1 @@
-## Patika.dev ödevleri  - Java
+## Patika.dev ödevleri  - Java 101
