@@ -17,10 +17,13 @@ public class Main {
         System.out.print("Yaşınızı Giriniz : ");
         yas = input.nextInt();
 
+        boolean yetiskinYasAraliginda = yas > 24 && yas < 65;
+
+
         if (mesafe > 0 && yas > 0) {
             //Mesafe ve yaş değerleri pozitif olduğu durumda çalışacak kod.
             if (yolculukTipi == 1) {
-                if ((yas > 24 && yas < 65)) {
+                if (yetiskinYasAraliginda) {
                     // Tek yön seçilmesi durumunda "yetişkin" bireylerin bilet fiyatlandırması
                     tutar = mesafe * mesafeUcreti;
                     System.out.println(tutar);
@@ -37,7 +40,7 @@ public class Main {
                 }
 
             } else if (yolculukTipi == 2) {
-                if ((yas > 24 && yas < 65)) {
+                if (yetiskinYasAraliginda) {
                     //Gidiş-Dönüş seçilmesi durumunda "yetişkin" bireylerin bilet fiyatlandırması
                     tipIndirimi = mesafeUcreti - (mesafeUcreti * 0.2);
                     tutar = mesafe * tipIndirimi * 2;
