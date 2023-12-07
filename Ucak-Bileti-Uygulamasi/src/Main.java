@@ -17,7 +17,7 @@ public class Main {
         System.out.print("Yaşınızı Giriniz : ");
         yas = input.nextInt();
 
-        boolean yetiskinYasAraliginda = yas > 24 && yas < 65;
+        boolean yetiskinYasAraliginda = yas >= 13 && yas < 65;
 
 
         if (mesafe > 0 && yas > 0) {
@@ -32,7 +32,7 @@ public class Main {
                     yasliIndirimi = mesafeUcreti - (mesafeUcreti * 0.30);
                     tutar = mesafe * yasliIndirimi;
                     System.out.println(tutar);
-                } else if (yas < 12) {
+                } else if (yas <= 12) {
                     //Tek yön seçilmesi durumunda "çocukların" bilet fiyatlandırması
                     cocukIndirimi = mesafeUcreti - (mesafeUcreti * 0.50);
                     tutar = mesafe * cocukIndirimi;
