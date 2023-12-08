@@ -5,61 +5,73 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Uçak Bileti Uyulaması");
 
-        double  tipIndirimi,cocukIndirimi,yasliIndirimi,tutar,mesafe,mesafeUcreti = 0.10;
-        int yolculukTipi,yas;
+        int     pathType,
+                age;
+
+        double  price,
+                distance;
+
+        double  distancePrice    = 0.10,
+                oldDiscounted    = distancePrice - (distancePrice * 0.30),
+                childDiscounted  = distancePrice - (distancePrice * 0.50),
+                youngDiscounted  = distancePrice - (distancePrice * 0.10),
+                typeDiscount     = distancePrice - (distancePrice * 0.20);
 
         System.out.print("Gidilecek Mesafe : ");
-        mesafe = input.nextDouble();
+        distance = input.nextDouble();
 
         System.out.print("Yolculuk Tipi Seçiniz '1-TEK YÖN , 2-GİDİŞ-DÖNÜŞ' : ");
-        yolculukTipi = input.nextInt();
+        pathType = input.nextInt();
 
         System.out.print("Yaşınızı Giriniz : ");
-        yas = input.nextInt();
+        age = input.nextInt();
 
-        boolean yetiskinYasAraliginda = yas >= 13 && yas < 65;
+        boolean isAdultAge = age >= 24 && age < 65;
+        boolean isOldAge = age >= 65;
+        boolean isChildAge = age <= 12;
+        boolean isYoungAge = age > 12 && age < 24;
 
-
-        if (mesafe > 0 && yas > 0) {
+        if (distance > 0 && age > 0) {
             //Mesafe ve yaş değerleri pozitif olduğu durumda çalışacak kod.
-            if (yolculukTipi == 1) {
-                if (yetiskinYasAraliginda) {
-                    // Tek yön seçilmesi durumunda "yetişkin" bireylerin bilet fiyatlandırması
-                    tutar = mesafe * mesafeUcreti;
-                    System.out.println(tutar);
-                } else if (yas > 65) {
-                    //Tek yön seçilmesi durumunda "yaşlı" bireylerin bilet fiyatlandırması
-                    yasliIndirimi = mesafeUcreti - (mesafeUcreti * 0.30);
-                    tutar = mesafe * yasliIndirimi;
-                    System.out.println(tutar);
-                } else if (yas <= 12) {
-                    //Tek yön seçilmesi durumunda "çocukların" bilet fiyatlandırması
-                    cocukIndirimi = mesafeUcreti - (mesafeUcreti * 0.50);
-                    tutar = mesafe * cocukIndirimi;
-                    System.out.println(tutar);
+            if (pathType == 1) {
+                if (isAdultAge) {
+                    // Tek yön seçilmesi durumunda "yetişkin" bilet fiyatlandırması
+                    price = distance * distancePrice;
+                    System.out.println(price);
+                } else if (isOldAge) {
+                    //Tek yön seçilmesi durumunda "yaşlı" bilet fiyatlandırması
+                    price = distance * oldDiscounted;
+                    System.out.println(price);
+                } else if (isChildAge) {
+                    //Tek yön seçilmesi durumunda "çocuk" bilet fiyatlandırması
+                    price = distance * childDiscounted;
+                    System.out.println(price);
+                } else if (isYoungAge) {
+                    //Tek yön seçilmesi durumunda "genç" bilet fiyatlandırması
+                    price = distance * youngDiscounted;
+                    System.out.println(price);
                 }
 
-            } else if (yolculukTipi == 2) {
-                if (yetiskinYasAraliginda) {
-                    //Gidiş-Dönüş seçilmesi durumunda "yetişkin" bireylerin bilet fiyatlandırması
-                    tipIndirimi = mesafeUcreti - (mesafeUcreti * 0.2);
-                    tutar = mesafe * tipIndirimi * 2;
-                    System.out.println(tutar);
-                } else if (yas > 65) {
-                    //Gidiş-Dönüş seçilmesi durumunda "yaşlı" bireylerin bilet fiyatlandırması
-                    tipIndirimi = mesafeUcreti - (mesafeUcreti * 0.2);
-                    yasliIndirimi = tipIndirimi - (tipIndirimi * 0.30);
-                    tutar = yasliIndirimi * mesafe * 2;
-                    System.out.println(tutar);
-                } else if (yas < 12) {
-                    //Gidiş-Dönüş seçilmesi durumunda "çocukların" bilet fiyatlandırması
-                    tipIndirimi = mesafeUcreti - (mesafeUcreti * 0.2);
-                    cocukIndirimi = tipIndirimi - (tipIndirimi * 0.50);
-                    tutar = cocukIndirimi * mesafe * 2;
-                    System.out.println(tutar);
+            } else if (pathType == 2) {
+                if (isAdultAge) {
+                    //Gidiş-Dönüş seçilmesi durumunda "yetişkin" bilet fiyatlandırması
+                    price = distance * typeDiscount * 2 * 10;
+                    System.out.println(price);
+                } else if (isOldAge) {
+                    //Gidiş-Dönüş seçilmesi durumunda "yaşlı" bilet fiyatlandırması
+                    price = oldDiscounted * distance * typeDiscount * 2 * 10 ;
+                    System.out.println(price);
+                } else if (isChildAge) {
+                    //Gidiş-Dönüş seçilmesi durumunda "çocuk" bilet fiyatlandırması
+                    price = childDiscounted * distance * typeDiscount * 2 * 10;
+                    System.out.println(price);
+                } else if (isYoungAge) {
+                    //Gidiş-Dönüş seçilmesi durumunda "genç" bilet fiyatlandırması
+                    price = distance * youngDiscounted * typeDiscount * 2 * 10;
+                    System.out.println(price);
                 }
 
-            } else if (yolculukTipi < 0 || yolculukTipi > 2) {
+            } else if (pathType < 0 || pathType > 2) {
                 System.out.println("Hatalı Veri Girdiniz !");
             }
         }else {
