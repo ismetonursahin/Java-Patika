@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("****MANAV KASA UYGULAMASI****");
 
         //Meyve ve Sebzelerin Kilogram Fiyatları
-
         double armut     = 2.14;
         double elma      = 3.67;
         double domates   = 1.11;
