@@ -15,7 +15,7 @@ public class Main {
        for(int i = 1 ; i <= x ; i++){
            System.out.print(i + ". Sayıyı giriniz : ");
            int num = input.nextInt();
-           if(num<min){
+           if(num<min || min == 0){
                min = num;
            }
            if(max<num){
@@ -23,5 +23,7 @@ public class Main {
            }
 
        }
+        System.out.println("MAX : " + max);
+        System.out.println("MİN : " +min);
     }
 }
