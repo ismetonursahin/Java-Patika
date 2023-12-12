@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int n1, n2;
-        
+
         System.out.print("n1 sayısını giriniz : ");
         n1 = input.nextInt();
         System.out.print("n2 saysını giriniz : ");
