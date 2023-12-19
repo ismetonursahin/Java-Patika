@@ -64,14 +64,14 @@ public class Employee {
         raise();
         result();
        System.out.println("ADI : " + this.name);
-       System.out.println("MAAŞ BİLGİSİ : "+ this.salary);
+       System.out.println("MAAŞ BİLGİSİ : "+ this.salary+ " TL");
        System.out.println("ÇALIŞMA SAATİ : " +this.workHours);
-       System.out.println("BAŞLANGIÇ YILI : " + this.hireYear);
-       System.out.println("VERGİ : " + this.tax);
-       System.out.println("BONUSLAR : " +(this.bonus + this.raise));
-       System.out.println("MAAŞ ARTIŞI : "+(this.bonus +this.raise-this.tax));
+       System.out.println("BAŞLANGIÇ YILI : " + this.hireYear );
+       System.out.println("VERGİ : " + this.tax +" TL");
+       System.out.println("BONUSLAR : " +(this.bonus + this.raise)+ " TL");
+       System.out.println("MAAŞ ARTIŞI : "+(this.bonus +this.raise-this.tax) +" TL");
        System.out.println("-----------------");
-       System.out.println("TOPLAM GÜNCEL MAAŞ : " + this.result );
+       System.out.println("TOPLAM GÜNCEL MAAŞ : " + this.result +" TL");
    }
 
 }
