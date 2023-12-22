@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
 
 
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -53,20 +52,20 @@ public class Main {
             }
         }
 
-        if (!isWin && count==5) {
+        if (!isWin && count == 5) {
             System.out.println("Kaybettiniz ! ");
-            if (!isWrong) {
-                for (int i = 0 ; i<gecmis.length; i++){
-                    if(gecmis[i]!=0){
 
-                    }
-                }
-
-            }
         }
-        System.out.println("Tahminleriniz : " + Arrays.toString(gecmis));
-        System.out.println("Sayı : " + number);
 
+           System.out.print("Denediğiniz Sayılar : ");
+           for (int i : gecmis) {
+            if (i != 0) {
+                System.out.print(i+" ");
+            }
+           }
+
+            System.out.println();
+            System.out.println("Sayı : " + number);
 
     }
 }
