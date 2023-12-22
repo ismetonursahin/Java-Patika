@@ -19,9 +19,8 @@ public class Main {
             for (int j = 0; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
                     count++;
-                    if (!isFind(duplicate, arr[i])) {
-                        duplicate[i] = arr[i];
-                    }
+
+
                 }
             }
             if (duplicate[i] != 0) {
