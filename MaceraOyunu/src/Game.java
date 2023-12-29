@@ -11,6 +11,8 @@ public class Game {
         Player player = new Player("İsmet");
         System.out.println("Karanlığa Hoşgeldin " + player.getPlayerName());
         System.out.println("Artık Tek Başınasın...");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("  - OYUNDAKİ KARAKTERLER  -");
         player.selectChar();
         Location location = null;
 
@@ -54,7 +56,7 @@ public class Game {
             }
 
             if (!location.onLocation()) {
-                System.out.println("Game Over");
+                System.out.println(" -- GAME OVER --");
                 break;
             }
         }

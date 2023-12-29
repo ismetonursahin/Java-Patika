@@ -40,7 +40,10 @@ public class ToolStore extends NormalLoc {
         System.out.println("    ==> Silahlar <==     ");
 
         for (Weapon w : Weapon.weapons()) {
-            System.out.println(w.getID() + " - " + w.getName() + " =>Para: " + w.getPrice() + ", =>Hasar: " + w.getDamage() + " >");
+            System.out.println(w.getID() + " - "
+                    + w.getName() +  "  => Para:"
+                    + w.getPrice() + ", => Hasar:"
+                    + w.getDamage() + " >");
         }
         System.out.println("0 - Dükkana Geri Dön");
     }

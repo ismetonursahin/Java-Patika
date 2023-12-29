@@ -1,15 +1,18 @@
 import javax.swing.text.Style;
+import java.lang.ref.PhantomReference;
 import java.util.Scanner;
 
 public class Player {
 
     private int health;
+    private int orjinalHealth;
     private int damage;
     private int money;
     private String playerName;
     private String charName;
     Scanner input = new Scanner(System.in);
     private Inventory inventory;
+
 
     public Player(String playerName) {
         this.playerName = playerName;
@@ -83,6 +86,7 @@ public class Player {
     public void initPlayer(GameChar gameChar) {
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
+        this.setOrjinalHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
         this.setCharName(gameChar.getName());
     }
@@ -92,6 +96,9 @@ public class Player {
     }
 
     public void setHealth(int health) {
+       if (health<0){
+           health=0;
+       }
         this.health = health;
     }
 
@@ -131,4 +138,11 @@ public class Player {
         this.charName = charName;
     }
 
+    public int getOrjinalHealth() {
+        return orjinalHealth;
+    }
+
+    public void setOrjinalHealth(int orjinalHealth) {
+        this.orjinalHealth = orjinalHealth;
+    }
 }
