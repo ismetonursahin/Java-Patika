@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class Main {
     public static void main(String[] args) {
 
-        TreeSet<Book> books = new TreeSet<>(new OrderName()) ;
+        TreeSet<Book> books = new TreeSet<>() ;
 
   books.add(new Book("Zorba",400,"Nikos Kazancakis","1946"));
   books.add(new Book("Cesur Yeni Dünya",280,"Aldous Huxley","1932"));
